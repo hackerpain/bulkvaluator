@@ -1,0 +1,70 @@
+<!-- <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" style="padding-top: 5px">
+   <a class="navbar-brand text-muted" href="/"><i class="icon fa fa-hand-holding-usd fa-2x"></i></span><sup class="text-muted"> BulkValue <b>(Powered by SaveBreach.com)</b></sup></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+   <div class="navbar-nav">
+   <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+   <a class="nav-item nav-link" href="#dom">Bulk Valuator</a>
+   <a class="nav-item nav-link" href="#bulk">Results</a>
+   <a class="nav-item nav-link" href="#csv">Import CSV</a>
+   </div>
+   </div>
+   </nav> <br> <br> !-->
+<html>  
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div id="header">
+   <i class="icon fa fa-hand-holding-usd fa-8x"></i>
+   <sup> <span id="logo">BulkValue</span></sup>
+   <ul id="menu">
+      <li><a href="#"><span>Home</span></a></li>
+      <li><a href="#dom"><span>BulkTool</span></a></li>
+      <li><a href="#bulk"><span>Results</span></a></li>
+      <li><a href="#csv"><span>CSV Import</span></a></li>
+      <li><a href="http://savebreach.com"><span>SaveBreach</span></a></li>
+   </ul>
+</div>
+<br> 
+<br>
+<br>
+<br>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet about BulkValue</a> <a href="https://twitter.com/SaveBreach?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SaveBreach</a> <br><br>
+<div class="container h-100">
+   <div class="d-flex justify-content-center h-1000">
+      <div class="textbox">
+         <textarea autofocus class="text_input" type="text" name="domains" placeholder="Enter domain names..." id="dom"></textarea>
+         <div class="checkbox">
+            <label><input type="checkbox" value="" id="csvCheck"> <i class="fas fa-file-csv fa-2x"></i><span> Paste in CSV format </span></label>
+         </div>
+         <button type="button" class="btn btn-outline-primary btn-lg btn-block" id="domValue">Find value <i class="fa fa-hand-holding-usd"></i></button>
+      </div>
+   </div>
+   <br>
+   <hr>
+   <h2 class="display-2"> Bulk Appraisal </h2>
+   <small class="display-4"> The results will be displayed in the table below. </small> <br> <br>
+   <div class="alert alert-danger alert-dismissable"> <button class="close" data-dismiss="alert" aria-label="close">&times;</button>
+      <i class="fas fa-exclamation-triangle"></i> Fetching the results may take time, so give it a while for processing. Please be patient meanwhile, and <b> don't close the window as you will lose the results by doing so! </b> 
+   </div>
+   <button type="button" id="csv" class="btn btn-success pull-right"><i class="fa fa-download"></i> Import CSV</button> 
+   <br> <br>
+   <table class="table table-hover table-dark hide" id="bulk">
+      <thead>
+         <tr>
+            <th>Domain</th>
+            <th>GoDaddy Value</th>
+         </tr>
+      </thead>
+   </table>
+</div>
+<div class="footer">
+   <small>Copyright &copy; <a class="text-light" href="http://savebreach.com">SaveBreach.com</a></small>
+</div>
+
+</body>
+</html>
