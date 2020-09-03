@@ -37,7 +37,7 @@
     <li><a href="#"><span>Home</span></a></li>
     <li><a href="#dom"><span>BulkTool</span></a></li>
     <li><a href="#bulk"><span>Results</span></a></li>
-    <li><a href="#csv"><span>CSV Export</span></a></li>
+    <li><a href="#csv"><span>CSV Import</span></a></li>
   <li><a href="http://savebreach.com"><span>SaveBreach</span></a></li>
   </ul>
 </div> 
@@ -46,15 +46,14 @@
 <br>
 <br>
 <br>
-<img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fhackerpain.github.io%2Fbulkvaluator%2F" alt="Hits">
- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet about BulkValue</a> <a href="https://twitter.com/SaveBreach?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SaveBreach</a> <br><br>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet about BulkValue</a> <a href="https://twitter.com/SaveBreach?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SaveBreach</a> <br><br>
 <div class="container h-100">
   <div class="d-flex justify-content-center h-1000">
     <div class="textbox">
       <textarea autofocus class="text_input" type="text" name="domains" placeholder="Enter domain names..." id="dom"></textarea>
       <div class="checkbox">
           <label><input type="checkbox" value="" id="csvCheck"> <i class="fas fa-file-csv fa-2x"></i><span> Paste in CSV format </span></label>
-          <label style="margin-left: 2em"><input type="checkbox" value="" id="compare"> <span><i class="fa fa-search-plus"></i> Show Comparable Sales </span></label>
+        <label style="margin-left: 2em"><input type="checkbox" value="" id="compare"> <span><i class="fa fa-search-plus"></i> Show Comparable Sales </span></label>
       </div>
       <button type="button" class="btn btn-outline-primary btn-lg btn-block" id="domValue">Find value <i class="fa fa-hand-holding-usd"></i></button>
     </div>
@@ -65,11 +64,11 @@
   <div class="alert alert-danger alert-dismissable"> <button class="close" data-dismiss="alert" aria-label="close">&times;</button>
  <i class="fas fa-exclamation-triangle"></i> Fetching the results may take time, so give it a while for processing. Please be patient meanwhile, and <b> don't close the window as you will lose the results by doing so! </b> 
   </div> 
-  <button type="button" id="csv" class="btn btn-success pull-right"><i class="fa fa-download"></i> Export CSV</button> 
+  <button type="button" id="csv" class="btn btn-success pull-right"><i class="fa fa-download"></i> Import CSV</button> 
   <br> <br>
 
-  <table class="table table-hover table-dark hide" id="bulk">
-    <thead>
+  <table class="table table-hover hide" id="bulk">
+    <thead class="thead-dark">
       <tr>
         <th>Domain</th>
         <th>GoDaddy Value</th>
