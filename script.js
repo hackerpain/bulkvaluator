@@ -21,12 +21,25 @@ $(document).ready(function() {
     for (i = 0; i < str.length; ++i) {
       
         $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://api.godaddy.com/v1/appraisal/' + str[i]), function(data) {
-         if (JSON.parse(data.contents).status != "OK" || JSON.parse(data.contents).status != "UNSUPPORTED_DOMAIN" || JSON.parse(data.contents).status != "MASKED_DOMAIN") {
+         var gd = JSON.parse(data.contents);
+         var sales = '';
+
+         if (gd.status != "OK" || gd.status != "UNSUPPORTED_DOMAIN" || gd.status != "MASKED_DOMAIN" || gd.status == "SLOW_DOWN") {
             sleep();
         }
 
-        if(JSON.parse(data.contents).domain != undefined && JSON.parse(data.contents).govalue != undefined) {
-        txt = "<tr><td>" + JSON.parse(data.contents).domain + "</td><td>" + JSON.parse(data.contents).govalue + "</td></tr>";
+       
+        if(gd.domain != undefined && gd.govalue != undefined) {
+          
+           if (document.getElementById("compare").checked == true) {
+          for (j=0; j<gd.comparable_sales.length; ++j) {
+              sales += "<tr><td>"+gd.comparable_sales[j].year+" <td>"+gd.comparable_sales[j].domain+"</td><td> $"+gd.comparable_sales[j].price+"</td></tr>";
+          }
+        txt = "<tr><th scope=\"row\">" + gd.domain + "</th><td>" + gd.govalue + "</td><td><table style=\"text-align: centre\">" + "<thead scope=\"row\"><th >Year</th><th >Domain</th><th>Sale Price</th></thead><tbody>" + sales + "</tbody></table></td></tr>";}
+          else {
+            $("#remove").remove();
+            txt = "<tr><td>" + JSON.parse(data.contents).domain + "</td><td>" + JSON.parse(data.contents).govalue + "</td></tr>";
+          }
         
         $("#bulk").append(txt);
         document.querySelector('#bulk').scrollIntoView({
